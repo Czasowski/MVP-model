@@ -6,7 +6,7 @@ public class MainPresenter implements MainContract.Presenter{
     private MainContract.Model mModel;
     private MainContract.View mView;
     private int numPlus = 0;
-    String  sNumPlus = "";
+    private String  sNumPlus = "";
 
     MainPresenter(MainContract.View mView, Context context) {
         this.mView = mView;
