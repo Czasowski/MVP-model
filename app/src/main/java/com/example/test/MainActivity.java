@@ -37,7 +37,9 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     @Override
     public void makeText(String text) {
         numOfClick.setText(text);
-        totalOfCLick.setText(mPresenter.totalNum());
+        int text1 = Integer.parseInt(text) + Integer.parseInt(mPresenter.totalNum());
+        String text1ex = Integer.toString(text1);
+        totalOfCLick.setText(text1ex);
     }
     @Override
     public void onDestroy() {
