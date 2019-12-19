@@ -8,11 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View {
-    SharedPreferences pref;
 private MainContract.Presenter mPresenter;
-private MainContract.Model mModel;
     private TextView numOfClick;
-    private TextView numsOfCLick;
+    private TextView totalOfCLick;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +21,7 @@ private MainContract.Model mModel;
         mPresenter = new MainPresenter(this);
 
         numOfClick = findViewById(R.id.textView2);
-        numsOfCLick = findViewById(R.id.textView3);
+        totalOfCLick = findViewById(R.id.textView3);
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +34,6 @@ private MainContract.Model mModel;
     @Override
     public void makeText(String text) {
       numOfClick.setText(text);
-      numsOfCLick.setText(mPresenter.totalNum());
+      totalOfCLick.setText(mPresenter.totalNum());
     }
 }

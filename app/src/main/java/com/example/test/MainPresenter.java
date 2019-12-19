@@ -1,8 +1,5 @@
 package com.example.test;
 
-
-import android.content.Context;
-
 public class MainPresenter implements MainContract.Presenter{
     private MainContract.Model mModel;
     private MainContract.View mView;
@@ -10,7 +7,7 @@ public class MainPresenter implements MainContract.Presenter{
 
     MainPresenter(MainContract.View mView) {
         this.mView = mView;
-        MainModel mModel = new MainModel(Context);
+        mModel = new MainModel();
     }
 
     @Override
