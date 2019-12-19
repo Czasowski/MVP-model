@@ -9,7 +9,7 @@ public interface MainContract {
     interface Presenter {
         void plus();
         String totalNum();
-
+        void saveQs();
     }
      interface Model {
         void saveQ(String text);

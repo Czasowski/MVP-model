@@ -5,8 +5,8 @@ import android.content.SharedPreferences;
 
 
 public class MainModel implements MainContract.Model {
-
     private SharedPreferences pref;
+
 
     MainModel(Context context) {
         pref = context.getSharedPreferences("RANGER", 0);
@@ -15,7 +15,9 @@ public class MainModel implements MainContract.Model {
     @Override
     public void saveQ(String text) {
         SharedPreferences.Editor ed = pref.edit();
-        ed.putString("RANGER", text);
+        int totals = Integer.parseInt(text)+ Integer.parseInt(pref.getString("RANGER","0"));
+        String stotal = Integer.toString(totals);
+        ed.putString("RANGER", stotal);
         ed.apply();
     }
 
